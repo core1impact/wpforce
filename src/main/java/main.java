@@ -14,7 +14,7 @@ public class main {
     public static void main(String[] args) throws Exception {
         ArrayList<String> users = new ArrayList<>();
         final int THREADS = 28;
-        String host = "https://exchtest.nagios.org";
+        String host = "https://url";
         ThreadFactory ThreadFactory = Executors.defaultThreadFactory();
         ExecutorService executor = Executors.newFixedThreadPool(THREADS, ThreadFactory);
 
@@ -28,7 +28,7 @@ public class main {
 
         ArrayList<String> wordlist = new ArrayList<>();
 
-        try (BufferedReader in = new BufferedReader(new FileReader("best1.txt"))) {
+        try (BufferedReader in = new BufferedReader(new FileReader("wordlist.txt"))) {
             String line;
             while ((line = in.readLine()) != null) {
                 wordlist.add(line);
